@@ -11,6 +11,7 @@ angular.module("eLearningApp").factory("Course", CourseFactory);
 angular.module("eLearningApp.controllers")
 .controller("mainController", function($scope, $state, $http, Course) {
 
+	// Initializing various variables for the UI
 	$scope.courses = [];
 	$scope.filteredCourses = [];
 	$scope.course = new Course();
@@ -47,6 +48,7 @@ angular.module("eLearningApp.controllers")
   		$state.go("home.new");
   	}
 
+  	// Using ngResource for CRUD actions
   	$scope.save = function() {
   		$scope.course.last_update = Date.now();
   		
@@ -97,6 +99,8 @@ angular.module("eLearningApp.controllers")
 
   	$scope.refreshData();
 
+  	// Loading data from JSON file to the DB. Can be clicked again
+  	// to repopulate the missing records in case of delete
   	$scope.loadJsonData = function() {
 	    $http.get('/data/inventory.json').then(function(result) {
 		   	data = result.data	
