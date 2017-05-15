@@ -20,6 +20,8 @@ Simple app that performs CRUD operations on a data model. Initial data can be lo
 
 ` nodemon server.js `
 
+Once the server is running, the app will be available at ` http://localhost:8080 `
+
 Requires a running MongoDB server.
 
 # First start up
