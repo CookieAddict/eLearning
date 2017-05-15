@@ -1,0 +1,79 @@
+<form>
+
+	<div class="panel panel-default">
+	  	<div class="panel-heading">
+	    	<h3 class="panel-title">
+	    		Course Details
+    		</h3>
+	 	</div>
+	  	<div class="panel-body">
+	  		<div class="row col-xs-6 col-xs-offset-3">
+	  			<img src="{{course.imageSrc}}" class="img-thumbnail"/>
+  			</div>
+
+  			<hr>
+
+			<div class="form-group col-xs-6 col-xs-offset-3">
+				<label>Title</label>
+				<input type="text" class="form-control" ng-model="course.title" required>
+			</div>
+			
+			<div class="form-group col-xs-6 col-xs-offset-3">
+				<label>ID</label>
+				<input type="text" class="form-control" ng-model="course.id" readonly>
+			</div>
+
+			<div class="form-group col-xs-6 col-xs-offset-3">
+				<label>Slug</label>
+				<input type="text" class="form-control" ng-model="course.slug" required>
+			</div>
+
+			<div class="form-group col-xs-6 col-xs-offset-3">
+				<label>Description</label>
+				<textarea class="form-control" rows="8" ng-model="course.description" required></textarea>
+			</div>
+
+			<div class="form-group col-xs-6 col-xs-offset-3">
+				<label>Language</label>
+				<input type="text" class="form-control" ng-model="course.language" required>
+			</div>
+
+			<div class="form-group col-xs-6 col-xs-offset-3">
+				<label>Number of lessons</label>
+				<input type="text" class="form-control" ng-model="course.lessons_count" required>
+			</div>
+
+			<div class="form-group col-xs-6 col-xs-offset-3">
+				<label>Skill</label>
+				<input type="text" class="form-control" ng-model="course.skill" required>
+			</div>
+
+			<div class="form-group col-xs-6 col-xs-offset-3">
+				<label>Time</label>
+				<input type="text" class="form-control" ng-model="course.time" required>
+			</div>
+
+			<div class="form-group col-xs-6 col-xs-offset-3">
+				<label>Image Link</label>
+				<input type="text" class="form-control" ng-model="course.imageSrc" required>
+			</div>
+
+			<div class="form-group col-xs-6 col-xs-offset-3">
+				<label>Last Updated</label>
+				<input type="text" class="form-control" ng-model="course.last_update" readonly>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-1 col-xs-offset-3">
+					<button type="button" class="btn btn-danger" ui-sref="home.courses">Back</button>
+				</div>
+				<div class="col-xs-1 col-xs-offset-3">
+					<button type="button" class="btn btn-danger" ng-click="delete()">Delete</button>
+				</div>
+				<div class="col-xs-1">
+					<button type="button" class="btn btn-success" ng-click="update()">Update</button>
+				</div>
+			</div>
+	 	 </div>
+	</div>
+</form>

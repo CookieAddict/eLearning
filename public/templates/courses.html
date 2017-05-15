@@ -1,0 +1,41 @@
+<form class="form-horizontal">
+
+	<div class="form-group">
+	  	<label class="col-xs-2 control-label">Courses per page</label>
+		<div class="col-xs-1">
+		  	<input type="number" min="1" max="10" class="form-control" ng-model="page.coursesPerPage" ng-change="loadPage()">
+		</div>
+		  	<div class="col-xs-2 col-xs-offset-5">
+	  		<button type="button" class="btn btn-success" ng-click="loadJsonData()">Load JSON Data</button>
+	  	</div>
+	  	<div class="col-xs-2">
+	  		<button type="button" class="btn btn-success" ng-click="viewNewPage()">Create Course</button>
+	  	</div>
+	</div>
+
+	<div ng-repeat="c in filteredCourses">	
+		<div class="panel panel-default">
+		  	<div class="panel-heading">
+		    	<h3 class="panel-title">
+		    		{{c.title}}</h3>
+		 	</div>
+		  	<div class="panel-body">
+		  		<div class="row col-xs-6 col-xs-offset-3">
+		  			<img src="{{c.imageSrc}}" class="img-thumbnail"/>
+		  		</div>
+		  		<div class="row col-xs-6 col-xs-offset-3">
+		  			<div class="btn-group btn-group-justified" role="group">
+		  				<div class="btn-group" role="group">
+		  					<button type="button" class="btn btn-success" ng-click="viewDetails(c)">View Details</button>
+	  					</div>
+  					</div>
+  				</div>
+		 	 </div>
+		</div>
+	</div>
+
+	<div class="col-xs-offset-4">
+		<ul uib-pagination total-items="totalCourses" ng-model="page.current" max-size="maxSize" items-per-page="page.coursesPerPage" 
+		boundary-links="true" num-pages="numPages" ng-change="loadPage()"></ul>
+	</div>
+</form>
