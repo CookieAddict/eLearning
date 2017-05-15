@@ -51,11 +51,9 @@ angular.module("eLearningApp.controllers")
   		$scope.course.last_update = Date.now();
   		
   		$scope.course.$save().then( function() {
-  			console.log("Course saved");
   			$scope.refreshData();
   			alert("Course saved");
   		}, function () {
-  			console.log("Save failed");
   			alert("Course failed");
   		}) 
 
@@ -66,11 +64,9 @@ angular.module("eLearningApp.controllers")
   		$scope.course.last_update = Date.now();
   		
   		$scope.course.$update().then( function() {
-  			console.log("Course updated");
   			$scope.refreshData();
 		 	alert("Course updated");
   		}, function () {
-  			console.log("Update failed");
   			alert("Update failed");
   		}) 
 
@@ -81,11 +77,9 @@ angular.module("eLearningApp.controllers")
   	$scope.delete = function() {
   		
   		$scope.course.$delete().then( function() {
-  			console.log("Course deleted");
   			$scope.refreshData();
   			alert("Course deleted");
   		}, function () {
-  			console.log("Delete failed");
   			alert("Delete failed");
   		}) 
 
